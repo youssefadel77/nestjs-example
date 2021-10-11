@@ -19,7 +19,6 @@ export class SentryService {
 
   /**
    * When injecting the service it will create the main transaction
-   *
    * @param request
    */
   constructor(@Inject(REQUEST) private request: Request) {
@@ -46,7 +45,6 @@ export class SentryService {
 
   /**
    * This will simply start a new child span in the current span
-   *
    * @param spanContext
    */
   startChild(spanContext: SpanContext) {

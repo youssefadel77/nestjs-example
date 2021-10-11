@@ -36,9 +36,8 @@ import { ConfigModule } from '@nestjs/config';
 })
 export class AppModule {
   configure(consumer: MiddlewareConsumer): void {
-    consumer.apply(Sentry.Handlers.requestHandler()).forRoutes({
-      path: '*',
-      method: RequestMethod.ALL,
-    });
+    consumer
+      .apply(Sentry.Handlers.requestHandler())
+      .forRoutes({ path: '*', method: RequestMethod.ALL });
   }
 }
